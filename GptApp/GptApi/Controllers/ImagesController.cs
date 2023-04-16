@@ -27,7 +27,7 @@ namespace GptApi.Controllers
                 var openAIClient = new OpenAIClient(new OpenAIAuthentication(token));
 
                 ImageGenerationRequest imageGenerationRequest = 
-                    new ImageGenerationRequest(model.title, model.qty, ImageSize.Medium, model.save ? openAIClient.OpenAIAuthentication.OrganizationId : null);
+                    new ImageGenerationRequest(model.title, model.qty, ImageSize.Small, model.save ? openAIClient.OpenAIAuthentication.OrganizationId : null);
 
                 var imageResult = await openAIClient.ImagesEndPoint.GenerateImageAsync(imageGenerationRequest);
 
