@@ -1,0 +1,23 @@
+﻿@model DetalharImagem
+@{
+    ViewData["Title"] = "Photo";
+}
+
+<div class="text-center">
+    <form asp-controller="home" asp-action="index">
+        <h1 class="display-4">Gerador de Imagens</h1>
+        <p>Imagens geradas</p>
+
+        <div class="imagens">
+            @foreach (var item in Model.imagens)
+            {
+                <div>
+                    <img src="@Html.Raw(item)" alt="">
+                    <hr />
+                </div>
+            }
+        </div>
+
+        <button type="submit">Voltar</button>
+    </form>
+</div>

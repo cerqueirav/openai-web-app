@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Victor\\source\\repos\\openai-web-app\\GptApp\\GptApi\\GptApi.csproj": {}
+    "C:\\Users\\Victor\\Source\\Repos\\openai-web-app\\GptApp\\GptApi\\GptApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Victor\\source\\repos\\openai-web-app\\GptApp\\GptApi\\GptApi.csproj": {
+    "C:\\Users\\Victor\\Source\\Repos\\openai-web-app\\GptApp\\GptApi\\GptApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Victor\\source\\repos\\openai-web-app\\GptApp\\GptApi\\GptApi.csproj",
+        "projectUniqueName": "C:\\Users\\Victor\\Source\\Repos\\openai-web-app\\GptApp\\GptApi\\GptApi.csproj",
         "projectName": "GptApi",
-        "projectPath": "C:\\Users\\Victor\\source\\repos\\openai-web-app\\GptApp\\GptApi\\GptApi.csproj",
+        "projectPath": "C:\\Users\\Victor\\Source\\Repos\\openai-web-app\\GptApp\\GptApi\\GptApi.csproj",
         "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Victor\\source\\repos\\openai-web-app\\GptApp\\GptApi\\obj\\",
+        "outputPath": "C:\\Users\\Victor\\Source\\Repos\\openai-web-app\\GptApp\\GptApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
