@@ -1,7 +1,7 @@
 <div align="center">
 	<h1 align="center">
 	    <img height="120" width="120" alt=".NET Core" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png" />
-	    <br> NET Core API + OpenAI 
+	    <br> Solution Web .NET MVC + .NET Core API with OpenAI 
 	</h1>
 	<h2>.NET Core application for create and read images, songs, and more.</h2>
 	<p>Developed by: Victor Lima Cerqueira</p>
