@@ -1,41 +1,64 @@
 ﻿@model ConsultarImagemViewModel
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "OpenAi with .NET";
 }
+
+
+<style>
+    .btnPesquisar {
+        width:200px;
+        margin-top: 1%;
+        background-color: gray;
+        color: white;
+        font-size: large;
+        font-weight: bold;
+    }
+</style>
+
 
 <div class="text-center">
     <form asp-controller="images" asp-action="create">
         <h1 class="display-4">Gerador de Imagens</h1>
-        <p>Aqui você descrever a imagem, utilize o máximo possível de informações, inclusive a quantidade de arquivos que serão gerados</p>
+        <p>Aqui você deve descrever a imagem, utilize o máximo possível de informações, inclusive a quantidade de arquivos que serão gerados</p>
 
         <div class="dadosConsulta">
              <div class="row">
-                <div class="form-group col-lg-10 col-md-10 col-sm-10 col-xs-12">
-                    <label asp-for="title" class="control-label left"></label>
-                    <input asp-for="title" class="form-control"/>
-                    <span asp-validation-for="title" class="text-danger"></span>
+                <div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <fieldset>
+                        <legend>Descrição</legend>
+                        <input asp-for="title" class="form-control" />
+                        <span asp-validation-for="title" class="text-danger"></span>
+                    </fieldset>
                 </div>
-                <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <label asp-for="qty" class="control-label left"></label>
-                    <input asp-for="qty" type="number" min="1" max="10" class="form-control" />
-                    <span asp-validation-for="qty" class="text-danger"></span>
+                <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <fieldset>
+                        <legend>Quantidade</legend>
+                        <input asp-for="qty" type="number" min="1" max="10" class="form-control" />
+                        <span asp-validation-for="qty" class="text-danger"></span>
+                    </fieldset>
                 </div>
             </div>
 
             <div class="row">
-                <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <label asp-for="save" class="control-label left"></label>
-                    <input type="radio" asp-for="save" value="true">
-                    <span asp-validation-for="save" class="text-danger"></span>
-                </div>
+                <fieldset>
+                  <legend>Vincular ao Usuário?</legend>
+                  <input type="radio" asp-for="save" value="true" /><label asp-for="size">Sim</label><br />
+                  <input type="radio" asp-for="save" value="false" /><label asp-for="size">Não</label><br />
+                </fieldset>
+
+                <fieldset>
+                  <legend>Qual o tamanho das imagens?</legend>
+                  <input type="radio" asp-for="size" value="1" /><label asp-for="size">Pequeno</label><br />
+                  <input type="radio" asp-for="size" value="2" /><label asp-for="size">Médio</label><br />
+                  <input type="radio" asp-for="size" value="3" /><label asp-for="size">Grande</label><br />
+                </fieldset>
             </div>
+
         </div>
         
-        <div class="row">
-            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <button class="btnPesquisar" type="submit"> Pesquisar </button>
-            </div>
+        <div>
+            <button class="btnPesquisar" type="submit"> Pesquisar </button>
         </div>
     </form>
 </div>

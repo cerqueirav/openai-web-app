@@ -44,11 +44,13 @@ namespace GptWeb.Controllers
             {
                 var retorno = response.Content.ReadAsStringAsync().Result;
                 DetalharImagem contentResult = new DetalharImagem();
-
+                
                 var imagensJson = JsonConvert.DeserializeObject<DetalharImagem>(retorno);
 
                 if (imagensJson is not null)
                     contentResult = imagensJson;
+
+                contentResult.descricao = model.title;
 
                 return View(contentResult);
             }

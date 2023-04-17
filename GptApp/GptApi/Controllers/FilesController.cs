@@ -1,7 +1,6 @@
-﻿using GptApi.Models;
+﻿using GptApi.Services.Implementation;
+using GptApi.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
-using OpenAI;
-using OpenAI.Files;
 
 namespace GptApi.Controllers
 {
@@ -9,34 +8,28 @@ namespace GptApi.Controllers
     [ApiController]
     public class FilesController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-
-        public FilesController(IConfiguration configuration)
+        private IOpenAiService _openAiService;
+        public FilesController(IOpenAiService openAiService)
         {
-            _configuration = configuration;
+            _openAiService = openAiService;
         }
 
         [HttpGet("/files/user/")]
         public async Task<IActionResult> GetAllFilesCreatedByUser()
         {
-            List<FileData> result = new List<FileData>();
-
-            var token = _configuration.GetValue<string>("ChatGpt:Token");
-            var openAIClient = new OpenAIClient(new OpenAIAuthentication(token));
-            var filesResult = await openAIClient.FilesEndpoint.ListFilesAsync();
-
             try
             {
+                var filesResult = await _openAiService.GetAllFiles();
+
                 if (filesResult is not null && !filesResult.Count.Equals(0))
-                    foreach (var file in filesResult)
-                        result.Add(file);
+                    return Ok(filesResult); 
             }
             catch (Exception ex)
             {
-                return BadRequest("Não foi possível realizar o processamento" + ex);
+                return NotFound("Nenhum arquivo encontrado!" + ex);
             }
 
-            return Ok(filesResult);
+            return BadRequest("Não foi possível realizar o processamento");
         }
     }
 }

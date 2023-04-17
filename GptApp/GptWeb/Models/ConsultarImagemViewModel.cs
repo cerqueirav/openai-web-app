@@ -13,5 +13,8 @@ namespace GptWeb.Models
 
         [Display(Name = "Vincular ao Usuario")]
         public bool save { get; set; }
+
+        [Display(Name = "Tamanho da Imagem")]
+        public int size { get; set; }
     }
 }

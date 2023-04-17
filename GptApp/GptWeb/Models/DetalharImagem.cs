@@ -2,10 +2,11 @@
 {
     public class DetalharImagem
     {
-        public List<string> imagens { get; set; }
+        public string descricao { get; set; }
+        public List<string> images { get; set; }
 
         public DetalharImagem() {
-            imagens = new List<string>();
+            images = new List<string>();
         }
     }
 }

@@ -2,10 +2,9 @@
 {
     public class ResultImageViewModel
     {
-        public List<String> imagens { get; set; }
-
-        public ResultImageViewModel() { 
-            imagens = new List<String>();
+        public List<string> images { get; set; }
+        public ResultImageViewModel(List<string> listImages) {
+            images = listImages;
         }
     }
 }
