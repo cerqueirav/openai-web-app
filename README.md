@@ -5,7 +5,7 @@
 	</h1>
 </div>
 
-#Web MVC Application + Web API .NET with OpenAi 
+## Web MVC Application + Web API .NET with OpenAi 
 
 This project provides a simple .NET MVC Web Application + .NET Core API to generate images from an text using OpenAi library .NET.
 
