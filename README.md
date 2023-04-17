@@ -39,7 +39,7 @@ cd openai-web-app/GptApi
 - OpenAi-DotNet 6.7.1 or later
 - Swashbuckle AspNetCore 6.4.0 or later
 
-# Run the Web Aplicattion
+# Run the Web API
 dotnet run or run through visual studio
 
 ## Documentation
