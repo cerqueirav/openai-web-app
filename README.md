@@ -1,4 +1,11 @@
-# OpenAi Web Application + REST API .NET
+<div align="center">
+	<h1 align="center">
+	    <img height="120" width="120" alt=".NET Core" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png"/>
+        <img height="120" width="120" alt=".NET Core" src="https://user-images.githubusercontent.com/34761298/232374189-d271565d-1388-4427-a0be-8742d7c67dce.jpg"/>
+	</h1>
+</div>
+
+# OpenAi Web MVC Application + Web API .NET
 
 This project provides a simple .NET MVC Web Application + .NET Core API to generate images from an text using OpenAi library .NET.
 
