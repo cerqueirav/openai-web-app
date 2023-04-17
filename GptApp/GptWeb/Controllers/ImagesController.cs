@@ -2,8 +2,6 @@
 using GptWeb.Models;
 using System.Diagnostics;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using GptWeb.Models.JsonDeserialized;
 
 namespace GptWeb.Controllers
 {
@@ -13,7 +11,6 @@ namespace GptWeb.Controllers
         private readonly string URLBASE = "https://localhost:44391/";
         private readonly ILogger<ImagesController> _logger;
         private readonly HttpClient client;
-        private HttpResponseMessage response;
 
         public ImagesController(ILogger<ImagesController> logger)
         {
@@ -38,7 +35,7 @@ namespace GptWeb.Controllers
         public async Task<IActionResult> Create(ConsultarImagemViewModel model)
         {
             string uri = URLBASE + "images/new";
-            response = await client.PostAsJsonAsync(uri, model);
+            var response = await client.PostAsJsonAsync(uri, model);
 
             if (response.IsSuccessStatusCode)
             {
