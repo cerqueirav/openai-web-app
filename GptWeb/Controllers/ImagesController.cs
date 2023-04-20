@@ -8,7 +8,8 @@ namespace GptWeb.Controllers
     public class ImagesController : Controller
     {
         #region ATRIBUTOS E CONSTRUTORES
-        private readonly string URLBASE = "https://localhost:44391/";
+        private readonly string URLBASE = "https://gptapi20230420004644.azurewebsites.net/";
+        
         private readonly ILogger<ImagesController> _logger;
         private readonly HttpClient client;
 
