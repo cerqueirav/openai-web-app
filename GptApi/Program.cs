@@ -1,5 +1,6 @@
 using GptApi.Services.Implementation;
 using GptApi.Services.Interface;
+using Microsoft.AspNetCore.Rewrite;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,12 +14,12 @@ builder.Services.AddScoped<IOpenAiService, OpenAiService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
+
+var option = new RewriteOptions();
+option.AddRedirect("^$", "swagger");
+app.UseRewriter(option);
 
 app.UseHttpsRedirection();
 
