@@ -1,0 +1,33 @@
+﻿@model GptWeb.Models.Pedido
+
+@{
+    ViewData["Title"] = "Detalhar";
+}
+
+<h2>Detalhar</h2>
+
+<div>
+    <h4>Pedido</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Vendedor.Nome)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Editar" asp-route-id="@Model.Id">Voltar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>
