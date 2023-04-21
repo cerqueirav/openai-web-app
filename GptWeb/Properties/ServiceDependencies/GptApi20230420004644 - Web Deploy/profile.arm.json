@@ -23,7 +23,7 @@
       "type": "string",
       "defaultValue": "GptApi20230420004644",
       "metadata": {
-        "description": "Name of the main resource to be created by this template."
+        "description": "Name of the main resource to be Cadastrard by this template."
       }
     },
     "resourceLocation": {
