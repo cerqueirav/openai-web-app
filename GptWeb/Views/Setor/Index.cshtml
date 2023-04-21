@@ -1,0 +1,35 @@
+﻿@model IEnumerable<GptWeb.Models.Setor>
+
+@{
+    ViewData["Title"] = "Setores";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Cadastrar" class="btn btn-default">Cadastrar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr class="bg-primary">
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Detalhar" asp-route-id="@item.Id">Detalhar</a> |
+                <a asp-action="Deletar" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
