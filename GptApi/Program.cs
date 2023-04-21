@@ -1,6 +1,7 @@
 using GptApi.Services.Implementation;
 using GptApi.Services.Interface;
 using Microsoft.AspNetCore.Rewrite;
+using stock_api.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IOpenAiService, OpenAiService>();
+builder.Services.AddScoped<IRabitMQProducer, RabitMQProducer>();
 
 var app = builder.Build();
 
