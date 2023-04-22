@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using GptApi.Services.Interface;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 using System.Text;
 
