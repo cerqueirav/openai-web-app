@@ -1,22 +1,39 @@
-﻿using GptWeb.Services;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using GptWeb.Models;
+using Newtonsoft.Json;
 
 namespace GptWeb.Controllers
 {
     public class SetorController : Controller
     {
-        private readonly ISetorService _setorService;
-
-        public SetorController(ISetorService setorService)
-        {
-            _setorService = setorService;
-        }
+        #region ATRIBUTOS E CONSTRUTORES
+        private readonly string URLBASE = "https://gptapi20230420004644.azurewebsites.net/";
+        
+        public SetorController(){}
+        #endregion
 
         public async Task<IActionResult> Index()
         {
-            //return View(await _setorService.Listar());
-            return View(new List<Setor>());
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    using (var requisicao = await httpClient.GetAsync(URLBASE + "/setor/"))
+                    {
+                        if (requisicao.StatusCode.Equals(System.Net.HttpStatusCode.OK))
+                        {
+                            var objetoJson = requisicao.Content.ReadAsStringAsync().Result;
+                            var objetoModel = JsonConvert.DeserializeObject<Setor>(objetoJson);
+                            return View(objetoModel);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
         }
 
         public async Task<IActionResult> Detalhar(int? id)
@@ -46,6 +63,7 @@ namespace GptWeb.Controllers
             if (ModelState.IsValid)
             {
                 //await _setorService.Cadastrar(Setor);
+
                 return RedirectToAction(nameof(Index));
             }
             return View(Setor);

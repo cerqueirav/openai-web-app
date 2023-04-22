@@ -12,6 +12,10 @@ namespace GptWeb.Models
 
         [DisplayFormat(DataFormatString = "{0:F2}")]
         public double Valor { get; set; }
+        public int VendedorId { get; set; }
+
+        [Display(Name = "Descrição do pedido")]
+        public string Descricao { get; set; }
 
         public SaleStatus Status { get; set; }
         public Vendedor Vendedor { get; set; }
