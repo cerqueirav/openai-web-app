@@ -1,0 +1,41 @@
+﻿@model GptWeb.Models.ViewModels.PedidoFormViewModel
+
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Pedido</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Cadastrar">
+            <div class="form-group">
+                <label asp-for="Pedido.Descricao" class="control-label"></label>
+                <input asp-for="Pedido.Descricao" class="form-control" />
+                <span asp-validation-for="Pedido.Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pedido.Valor" class="control-label"></label>
+                <input asp-for="Pedido.Valor" class="form-control" />
+                <span asp-validation-for="Pedido.Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Vendedor</label>
+                <select asp-for="Pedido.VendedorId" asp-items="@(new SelectList(Model.Vendedores,"Id", "Nome"))" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-success" />
+                <a asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
