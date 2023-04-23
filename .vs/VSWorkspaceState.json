@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\GptApp"
+    "\\GptApi",
+    "\\GptApi\\Controllers",
+    "\\GptWeb",
+    "\\GptWeb\\Views",
+    "\\GptWeb\\Views\\Shared",
+    "\\GptWeb\\wwwroot",
+    "\\GptWeb\\wwwroot\\css"
   ],
-  "SelectedNode": "\\GptApp\\GptApp.sln",
+  "SelectedNode": "\\GptApp.sln",
   "PreviewInSolutionExplorer": false
 }

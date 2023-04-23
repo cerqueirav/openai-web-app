@@ -1,0 +1,37 @@
+﻿@model DetalharImagem
+@{
+    ViewData["Title"] = "Detalhar Imagens";
+}
+
+<style>
+    .btnVoltar {
+        width: 200px;
+        margin-top: 1%;
+        background-color: gray;
+        color: white;
+        font-size: large;
+        font-weight: bold;
+    }
+</style>
+
+<div>
+    <form asp-controller="home" asp-action="index">
+        <h2 class="display-4">Gerador de Imagens</h2>
+        <div>
+            <h4>Texto escolhido: @Html.DisplayName(Model.descricao) </h4>   
+        </div>
+
+        <div class="row">
+            @foreach (var item in Model.images)
+            {
+                <div style="margin-bottom:2%; align-items:baseline">
+                    <img src="@Html.Raw(item)" alt="">
+                </div>
+            }
+        </div>
+
+        <div>
+            <button class="btnVoltar" type="submit"> Voltar </button>
+        </div>
+    </form>
+</div>
