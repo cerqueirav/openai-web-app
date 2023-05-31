@@ -8,7 +8,7 @@ namespace GptWeb.Controllers
     public class ImagesController : Controller
     {
         #region ATRIBUTOS E CONSTRUTORES
-        private readonly string URLBASE = "https://localhost:53808/";
+        private readonly string URLBASE = "https://localhost:7158/";
         
         private readonly ILogger<ImagesController> _logger;
         private readonly HttpClient client;
